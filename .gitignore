@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__
+tmp/
+res/
+exp/lmdb/lmdb.nt
+exp/yago/yagoFacts.nt
+exp/zika/ontology-2024-12-16_15-03-55--subclass.ttl
+exp/deep_taxonomy/test-dl-1000000.n3
+*.nt-e
+*.n3-e
