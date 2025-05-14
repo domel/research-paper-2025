@@ -24,7 +24,7 @@ The systems used for comparison in the paper can be found here:
 This use case was found in Reutter et al. [1] and downloaded from https://adriansoto.cl/RecSPARQL/.
 We converted the queries, which used the recSPARQL syntax, into recursive SPARQL CONSTRUCT queries.
 
-To run this use case, you will need to separately [download](https://www.dropbox.com/scl/fo/y9t8puj7owi8qkauyjqqj/ADj81HXllOIWjTZxyD7dbgs?rlkey=ni8847dx6bgec07zommlldiuk&st=ijc51xgd&dl=0) the `lmdb.nt` dataset and copy it into the [`exp/lmdb`](exp/lmdb) folder.
+To run this use case, you will need to separately [download](https://gofile.io/d/Lb1J00) the `lmdb.nt` dataset and copy it into the [`exp/lmdb`](exp/lmdb) folder.
 
 ```
 run % ./sin3.sh -s ../exp/lmdb/sparql/lmdb1.sparql -d ../exp/lmdb/lmdb.nt -m fwd -v
@@ -37,7 +37,7 @@ run % ./sin3.sh -s ../exp/lmdb/sparql/lmdb3.sparql -d ../exp/lmdb/lmdb.nt -m fwd
 This use case was also found in Reutter et al. [1] and downloaded from https://adriansoto.cl/RecSPARQL/.
 As before, we converted the queries, which used the recSPARQL syntax, into recursive SPARQL CONSTRUCT queries.
 
-To run this use case, you will need to separately [download](https://www.dropbox.com/scl/fo/y9t8puj7owi8qkauyjqqj/ADj81HXllOIWjTZxyD7dbgs?rlkey=ni8847dx6bgec07zommlldiuk&st=ijc51xgd&dl=0) the `yagoFacts.nt` dataset and copy it into the [`exp/yago`](exp/yago) folder.
+To run this use case, you will need to separately [download](https://gofile.io/d/Lb1J00) the `yagoFacts.nt` dataset and copy it into the [`exp/yago`](exp/yago) folder.
 
 ```
 run % ./sin3.sh -s ../exp/yago/sparql/yago1.sparql -d ../exp/yago/yagoFacts.nt -m fwd -v
@@ -52,7 +52,7 @@ run % ./sin3.sh -s ../exp/yago/sparql/yago5.sparql -d ../exp/yago/yagoFacts.nt -
 
 This taxonomy was taken from https://eulersharp.sourceforge.net/2009/12dtb/.
 
-To run this use case, you will need to separately [download](https://www.dropbox.com/scl/fo/y9t8puj7owi8qkauyjqqj/ADj81HXllOIWjTZxyD7dbgs?rlkey=ni8847dx6bgec07zommlldiuk&st=ijc51xgd&dl=0) the `test-dl-1000000.n3` dataset and copy it into the [`exp/deep_taxonomy`](exp/deep_taxonomy) folder.
+To run this use case, you will need to separately [download](https://gofile.io/d/Lb1J00) the `test-dl-1000000.n3` dataset and copy it into the [`exp/deep_taxonomy`](exp/deep_taxonomy) folder.
 
 ```
 run % ./sin3.sh -s ../exp/deep_taxonomy/test-rules.sparql -d ../exp/deep_taxonomy/test-dl-1000000.n3 -q ../exp/deep_taxonomy/test-dl-query.n3 -m bwd -v
