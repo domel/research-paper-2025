@@ -94,6 +94,6 @@ run_reas_time=$(bc -l <<< "scale = 2; $run_reas_time/1000")
 echo -e "\ntime_gen_spin,time_gen_n3,run_strt_time,run_netw_time,run_reas_time,time_exec_total"
 echo -e "$time_gen_spin,$time_gen_n3,$run_strt_time,$run_netw_time,$run_reas_time,$time_exec_total"
 
-if [[ $verbose == "true" ]]; then
-    echo -e "\nload data: $run_netw_time s\ngenerate spin: $time_gen_spin s\ngenerate n3: $time_gen_n3 s\nexec n3: $time_exec_total s"
-fi
+# if [[ $verbose == "true" ]]; then
+#     echo -e "\nload data: $run_netw_time s\ngenerate spin: $time_gen_spin s\ngenerate n3: $time_gen_n3 s\ntotal: $time_exec_total s"
+# fi
