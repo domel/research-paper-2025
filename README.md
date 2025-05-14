@@ -1,15 +1,6 @@
 # Online Appendix
 
-This online appendix accompanies our submission "SPARQL in N3: SPARQL construct as a rule language for the Semantic Web" to ESWC 2025.
-
-# HL7 FHIR vocabulary
-
-We provide example snippets of the [original](exp/zika/snippets/orig) and [reduced](exp/zika/snippets/red) HL7 FHIR vocabularies, 
-which illustrate the differences between them; the latter contains less deeply nested structures.
-
-The [set of queries](exp/zika/queries_orig.sparql) for the original HL7 FHIR vocabulary illustrate the number of joins needed for querying the data.
-This can be contrasted to the [set of queries](exp/zika/queries_red.sparql) for the reduced HL7 FHIR vocabulary.
-
+This online appendix accompanies our submission "SPARQL in N3: SPARQL construct as a rule language for the Semantic Web" to ISWC 2025.
 
 # Experiments
 
@@ -56,55 +47,6 @@ To run this use case, you will need to separately [download](https://www.dropbox
 ./sin3.sh -s ../exp/yago/sparql/yago5.sparql -d ../exp/yago/yagoFacts.nt -m fwd -v
 ```
 
-## Zika use case
-
-The Zika use case can be found under the [`exp/zika`](exp/zika/) folder, including queries and datasets.
-We refer to the paper for details on how the datasets were generated.
-
-### Forward chaining
-
-Full FHIR vocabulary:
-```
-./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt1.nt -m fwd -v
-./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt2.nt -m fwd -v
-```
-
-_Note_: the `.nt` files were pre-processed to avoid the use of `rdf:first` and `rdf:rest` pairs in the data, 
-as these cause issues with the `eye` reasoner (where they are recognized as builtins).
-This is a temporary technical issue that will be fixed.
-
-Reduced FHIR vocabulary:
-```
-./sin3.sh -s ../exp/zika/queries_red.sparql -d ../exp/zika/data_red_0pt1.n3 -m fwd -v
-./sin3.sh -s ../exp/zika/queries_red.sparql -d ../exp/zika/data_red_0pt2.n3 -m fwd -v
-```
-
-Including the SNOMED ontology:
-```
-./sin3.sh -s ../exp/zika/queries_red_snomed.sparql -d ../exp/zika/data_red_0pt2_snomed.n3,../exp/zika/ontology-2024-12-16_15-03-55--subclass.ttl -m fwd -v
-```
-
-### Backward chaining
-
-Full FHIR vocabulary:
-```
-./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt1.nt -q ../exp/zika/bwd_query.n3 -m bwd -v
-./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt2.nt -q ../exp/zika/bwd_query.n3 -m bwd -v
-```
-
-_Note_: we make the same note here about the pre-processed `.nt` files.  
-_Note_: `bwd_query.n3` here was already translated from a SPARQL query into N3 rules; we leave this step out for brevity.
-
-Reduced FHIR vocabulary:
-```
-./sin3.sh -s ../exp/zika/queries_red.sparql -d ../exp/zika/data_red_0pt1.n3 -q ../exp/zika/bwd_query.n3 -m bwd -v
-./sin3.sh -s ../exp/zika/queries_red.sparql -d ../exp/zika/data_red_0pt2.n3 -q ../exp/zika/bwd_query.n3 -m bwd -v
-```
-
-Including the SNOMED ontology:
-```
-./sin3.sh -s ../exp/zika/queries_red_snomed.sparql -d ../exp/zika/data_red_0pt2_snomed.n3,../exp/zika/ontology-2024-12-16_15-03-55--subclass.ttl -q ../exp/zika/bwd_query.n3 -m bwd -v
-```
 
 ## Deep Taxonomy
 
