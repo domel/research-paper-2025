@@ -1,6 +1,6 @@
 # Online Appendix
 
-This online appendix accompanies our submission "SPARQL in N3: SPARQL construct as a rule language for the Semantic Web" to ISWC 2025.
+This online appendix accompanies our submission "SPARQL in N3: SPARQL construct as a rule language for the Semantic Web" to RuleML+RR 2025.
 
 # Experiments
 
