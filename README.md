@@ -2,7 +2,11 @@
 
 This online appendix accompanies our submission "SPARQL in N3: SPARQL construct as a rule language for the Semantic Web" to RuleML+RR 2025.
 
-# Experiments
+# Experiment results
+
+The [`exp/`](exp/) folder includes the detailed experiment results, together with a summary and discussion.
+
+# Run experiments
 
 SiN3 requires the installation of the eye reasoner: 
 https://github.com/eyereasoner/eye/tags (note that we used [v10.24.10](https://github.com/eyereasoner/eye/releases/tag/v10.24.10))
