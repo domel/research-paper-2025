@@ -64,6 +64,72 @@ run % ./sin3.sh -s ../exp/deep_taxonomy/test-rules.sparql -d ../exp/deep_taxonom
 
 _Note_: `test-dl-query.n3` here was already translated from a SPARQL query into N3 rules; we leave this step out for brevity.
 
+## Zika use case
+
+
+The Zika use case can be found under the [`exp/zika`](exp/zika/) folder, including queries and datasets.
+
+
+### Forward chaining
+
+Full FHIR vocabulary:
+
+
+```
+./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt1.nt -m fwd -v
+
+./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt2.nt -m fwd -v
+
+```
+
+_Note_: the `.nt` files were pre-processed to avoid the use of `rdf:first` and `rdf:rest` pairs in the data, as these cause issues with the `eye` reasoner (where they are recognized as builtins).
+
+This is a temporary technical issue that will be fixed.
+
+Reduced FHIR vocabulary:
+
+```
+./sin3.sh -s ../exp/zika/queries_red.sparql -d ../exp/zika/data_red_0pt1.n3 -m fwd -v
+./sin3.sh -s ../exp/zika/queries_red.sparql -d ../exp/zika/data_red_0pt2.n3 -m fwd -v
+
+```
+
+Including the SNOMED ontology:
+
+```
+./sin3.sh -s ../exp/zika/queries_red_snomed.sparql -d ../exp/zika/data_red_0pt2_snomed.n3,../exp/zika/ontology-2024-12-16_15-03-55--subclass.ttl -m fwd -v
+```
+
+
+### Backward chaining
+
+Full FHIR vocabulary:
+
+```
+./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt1.nt -q ../exp/zika/bwd_query.n3 -m bwd -v
+
+./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt2.nt -q ../exp/zika/bwd_query.n3 -m bwd -v
+
+```
+
+_Note_: we make the same note here about the pre-processed `.nt` files.  
+
+_Note_: `bwd_query.n3` here was already translated from a SPARQL query into N3 rules; we leave this step out for brevity.
+
+Reduced FHIR vocabulary:
+
+```
+./sin3.sh -s ../exp/zika/queries_red.sparql -d ../exp/zika/data_red_0pt1.n3 -q ../exp/zika/bwd_query.n3 -m bwd -v
+
+./sin3.sh -s ../exp/zika/queries_red.sparql -d ../exp/zika/data_red_0pt2.n3 -q ../exp/zika/bwd_query.n3 -m bwd -v
+
+```
+
+Including the SNOMED ontology:
+
+```
+./sin3.sh -s ../exp/zika/queries_red_snomed.sparql -d ../exp/zika/data_red_0pt2_snomed.n3,../exp/zika/ontology-2024-12-16_15-03-55--subclass.ttl -q ../exp/zika/bwd_query.n3 -m bwd -v
+```
 
 # References
 
