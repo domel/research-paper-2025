@@ -57,7 +57,7 @@ Each experiment was executed 5 times and results were averaged.
 
 ### LMDB and YAGO
 
-<img style="width: 40%" src="images/lmdb_yago_results.png">
+<img style="width: 50%" src="images/lmdb_yago_results.png">
 
 Both sin3 and spinrdf involve converting input SPARQL queries into SPIN code (Gen SPIN). 
 Subsequently, sin3 converts the SPIN code into N3 rules (Gen N3). 
@@ -71,7 +71,7 @@ Hence, we note that spinrdf, which uses a query engine (Jena), performs much bet
 
 ### Zika experiment
 
-<img style="width: 35%" src="images/zika_results.png">
+<img style="width: 45%" src="images/zika_results.png">
 
 <!-- | Implementation | $data^{orig}_{0.1}$ | $data^{orig}_{0.2}$ | $data^{red}_{0.1}$ | $data^{red}_{0.2}$ | $data^{red,subcl}_{0.2}$ |
 | --- | --- | --- | --- | --- | --- |
