@@ -78,7 +78,6 @@ Full FHIR vocabulary:
 run % ./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt1.nt -m fwd -v
 
 run % ./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt2.nt -m fwd -v
-
 ```
 
 _Note_: the `.nt` files were pre-processed to avoid the use of `rdf:first` and `rdf:rest` pairs in the data, as these cause issues with the `eye` reasoner (where they are recognized as builtins).
