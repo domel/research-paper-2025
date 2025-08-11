@@ -24,21 +24,21 @@ based on a series of factors. We expand on this test case with randomly generate
 and reasoning over a biomedical ontology, i.e., SNOMED [6].
 
 _Original FHIR vocabulary_.
-We randomly generated 2 datasets of 1000 patients: in $data^{orig}_{0.2}$, patients had 0.2 chance of having a Zika indicator; in $data^{orig}_{0.1}$, patients had 0.2 chance of having a Zika indicator.
-This led to respectively ca. 2.5% ($data^{orig}_{0.2}$), and ca. 0.5% of patients ($data^{orig}_{0.1}$) who should be tested for Zika. 
+We randomly generated 2 datasets of 1000 patients: in $`data^{orig}_{0.2}`$, patients had 0.2 chance of having a Zika indicator; in $`data^{orig}_{0.1}`$, patients had 0.2 chance of having a Zika indicator.
+This led to respectively ca. 2.5% ($`data^{orig}_{0.2}`$), and ca. 0.5% of patients ($`data^{orig}_{0.1}`$) who should be tested for Zika. 
 Patients have at most 2 conditions.
 Code snippets [here](zika/snippets/orig/) illustrate how patients, conditions and observations are represented in the original HL7 FHIR vocabulary.
 
 _Reduced FHIR vocabulary_. This is a reduced version of the FHIR vocabulary that relies less on deeply structured data. 
-We similarly generated random datasets using this vocabulary, namely $data^{red}_{0.2}$ and $data^{red}_{0.1}$.
+We similarly generated random datasets using this vocabulary, namely $`data^{red}_{0.2}`$ and $`data^{red}_{0.1}`$.
 Code snippets [here](zika/snippets/red/) illustrate how patients, conditions and observations are represented in the reduced HL7 FHIR vocabulary.
 
 | dataset | vocabulary | number of triples | chance of zika indicator
 |---|---|---|---|
-| $data^{orig}_{0.1}$ | original | 20,241 | 0.1 | 
-| $data^{orig}_{0.2}$ | original | 36,358 | 0.2 | 
-| $data^{red}_{0.1}$ | reduced | 9,203 | 0.1 | 
-| $data^{red}_{0.2}$ | reduced | 16,346 | 0.2 |
+| $`data^{orig}_{0.1}`$ | original | 20,241 | 0.1 | 
+| $`data^{orig}_{0.2}`$ | original | 36,358 | 0.2 | 
+| $`data^{red}_{0.1}`$ | reduced | 9,203 | 0.1 | 
+| $`data^{red}_{0.2}`$ | reduced | 16,346 | 0.2 |
 
 
 ### Systems
@@ -73,7 +73,7 @@ Hence, we note that spinrdf, which uses a query engine (Jena), performs much bet
 
 <img style="width: 45%" src="images/zika_results.png">
 
-<!-- | Implementation | $data^{orig}_{0.1}$ | $data^{orig}_{0.2}$ | $data^{red}_{0.1}$ | $data^{red}_{0.2}$ | $data^{red,subcl}_{0.2}$ |
+<!-- | Implementation | $`data^{orig}_{0.1}`$ | $`data^{orig}_{0.2}`$ | $`data^{red}_{0.1}`$ | $`data^{red}_{0.2}`$ | $`data^{red,subcl}_{0.2}`$ |
 | --- | --- | --- | --- | --- | --- |
 | sin3-bwd  | 9.4   | 229   | 0.01 | 0.4  | 0.8 |
 | sin3-fwd  | 13.2  | 32.2  | 0.6  | 1.8  | 3.8 |
@@ -87,17 +87,17 @@ __Original FHIR vocabulary__. The original FHIR vocabulary is deeply nested, mea
 We thus expect query engines (spinrdf ) to have an advantage as they tend to be optimized for joins. 
 
 Indeed, we found the number of joins to be problematic for rule engines.
-Reasoning over $data^{orig}_{0.1}$ using sin3-fwd reasoning takes ca. 13.2s, 
+Reasoning over $`data^{orig}_{0.1}`$ using sin3-fwd reasoning takes ca. 13.2s, 
 and 9.4s using sin3-bwd, 
 whereas spinrdf only takes ca. 0.5s. 
 
-For $data^{orig}_{0.1}$ , sin3-bwd has an advantage over the sin3-fwd variant, 
+For $`data^{orig}_{0.1}`$ , sin3-bwd has an advantage over the sin3-fwd variant, 
 as only a small number of patients will be positive, and thus only a small part of the state space has to be searched. 
-This advantage is completely lost for $data^{orig}_{0.2}$, where sin3-bwd takes ca. 229s, 
+This advantage is completely lost for $`data^{orig}_{0.2}`$, where sin3-bwd takes ca. 229s, 
 and sin3-fwd takes ca. 32s, and spinrdf only takes ca. 1.4s.
 
 __Reduced FHIR vocabulary__. 
-Here, we see the performance equalizing: for $data^{red}_{0.2}$, 
+Here, we see the performance equalizing: for $`data^{red}_{0.2}`$, 
 i.e., with the most rules firing, sin3-bwd takes ca. 0.4s, sin3-fwd takes ca. 1.8s, and spinrdf takes ca. 0.8s.
 We thus observe that complex and deeply nested data structures, with non-trivial data size, are problematic for rule engines. 
 We revisit this in future work.
@@ -105,7 +105,7 @@ We revisit this in future work.
 __Reasoning with SNOMED and OWL2 RL__. Realistically, patients will often not be tagged with a high-level condition (e.g., muscle pain), but rather with a more specific sub-condition (e.g., abdominal muscle pain). 
 
 The CDC guidelines, i.e., on which this use case is based, refer to SNOMED [10]. 
-We extracted its subclass hierarchy (31.5 Mb) and included it in a third dataset $data^{orig,subcl}_{0.2}$,
+We extracted its subclass hierarchy (31.5 Mb) and included it in a third dataset $`data^{orig,subcl}_{0.2}`$,
 which also uses reduced FHIR but with more specific condition codes. 
 We include a construct query representing the OWL2 RL cax-sco OWL2 RL rule [11].
 
