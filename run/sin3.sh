@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if command -v gdate >/dev/null 2>&1; then
+    DATE_CMD="gdate"  # macOS with GNU coreutils installed
+else
+    DATE_CMD="date"   # Linux or GNU coreutils already default
+fi
+
 usage() { echo "Usage: [-s <sparql>] [-d <data>] [-m <mode>] ([-q <query>]) ([-v <verbose>]) ([-r <result>])" 1>&2; exit 1; }
 
 while getopts s:d:m:q:vr: option
@@ -64,7 +70,7 @@ for data in $datas; do
 done
 unset IFS;
 
-start=$(gdate +%s%N)
+start=$($DATE_CMD +%s%N)
 if [[ $mode == "bwd" ]]; then
     cmd="eye code/runtime.n3 $n3_file $load_cmd --query $query --nope"
 else
@@ -74,7 +80,7 @@ if [[ $verbose == "true" ]]; then
     echo -e "$cmd"
 fi
 error=$( { eval "$cmd" > $result; } 2>&1 )
-end=$(gdate +%s%N)
+end=$($DATE_CMD +%s%N)
 time_exec_total=$(bc -l <<< "scale = 2; ($end-$start)/1000000000")
 
 if [[ $verbose == "true" ]]; then
