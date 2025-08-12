@@ -76,7 +76,6 @@ Full FHIR vocabulary:
 
 ```
 run % ./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt1.nt -m fwd -v
-
 run % ./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt2.nt -m fwd -v
 ```
 
@@ -104,7 +103,6 @@ Full FHIR vocabulary:
 
 ```
 run % ./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt1.nt -q ../exp/zika/bwd_query.n3 -m bwd -v
-
 run % ./sin3.sh -s ../exp/zika/queries_orig.sparql -d ../exp/zika/data_orig_0pt2.nt -q ../exp/zika/bwd_query.n3 -m bwd -v
 ```
 
@@ -116,7 +114,6 @@ Reduced FHIR vocabulary:
 
 ```
 run % ./sin3.sh -s ../exp/zika/queries_red.sparql -d ../exp/zika/data_red_0pt1.n3 -q ../exp/zika/bwd_query.n3 -m bwd -v
-
 run % ./sin3.sh -s ../exp/zika/queries_red.sparql -d ../exp/zika/data_red_0pt2.n3 -q ../exp/zika/bwd_query.n3 -m bwd -v
 ```
 
