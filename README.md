@@ -4,10 +4,11 @@ This online appendix accompanies our submission "SPARQL in N3: SPARQL construct 
 
 # Online Demo
 
-There is an online demo available here:
+We provide an online demo for testing query translation and execution:
 [https://editor.notation3.org/spin3/s/oG7qKAqN](https://editor.notation3.org/spin3/s/oG7qKAqN). 
 
-The demo is pre-loaded with Zika experiment queries and example data. You can click "execute" to run the query; the results will appear below, together with links for downloading the generated SPIN files and N3 rules.
+The demo is pre-loaded with Zika experiment queries and example data. 
+After clicking "execute", the query results and translated files (SPIN, N3) are shown.
 
 # Experiment results
 
