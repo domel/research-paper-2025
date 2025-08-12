@@ -67,7 +67,16 @@ Sin3 and spinrdf load the dataset into memory (Load), whereas recSPARQL pre-crea
 Sin3 is competitive regarding reasoning performance (Exec): 
 for the LMDB dataset, on average, sin3 takes ca. 10.5s, spinrdf ca. 11.8s, and recSPARQL ca. 36.2s. 
 For the Yago dataset, on average, sin3 takes ca. 6.7s , spinrdf ca. 3.1s, and recSPARQL ca. 34.7s. 
-Hence, we note that spinrdf, which uses a query engine (Jena), performs much better for the Yago dataset. We revisit this in future work.
+Hence, we note that spinrdf, which uses a query engine (Jena), performs much better for the Yago dataset.
+
+A benefit of rule languages is that both forward- and backward reasoning strategies can be used. 
+To illustrate this, we used the [Deep Taxonomy (DT)](https://eulersharp.sourceforge.net/2009/12dtb/), 
+a construct query that implements the OWL2 RL cax-sco rule [9], 
+and a custom query requesting all instances of class A2. 
+Backward reasoning has an advantage here, as only a small part of the transitive closure has to be searched;
+forward reasoning has to materialize the entire transitive closure. 
+Indeed, after translating the OWL2 RL query to a backward-chaining N3 rule, eye takes avg. 34ms, 
+while spinrdf does not return results after 1h (results not shown in table).
 
 ### Zika experiment
 
@@ -100,7 +109,6 @@ __Reduced FHIR vocabulary__.
 Here, we see the performance equalizing: for $`data^{red}_{0.2}`$, 
 i.e., with the most rules firing, sin3-bwd takes ca. 0.4s, sin3-fwd takes ca. 1.8s, and spinrdf takes ca. 0.8s.
 We thus observe that complex and deeply nested data structures, with non-trivial data size, are problematic for rule engines. 
-We revisit this in future work.
 
 __Reasoning with SNOMED and OWL2 RL__. Realistically, patients will often not be tagged with a high-level condition (e.g., muscle pain), but rather with a more specific sub-condition (e.g., abdominal muscle pain). 
 
@@ -122,3 +130,4 @@ Indeed, sin3-bwd takes around 0.8s, sin3-fwd around 3.8s, and spinrdf around 5.9
 [6] U.S. National Library of Medicine: SNOMED CT, https://www.nlm.nih.gov/healthit/snomedct/index.html  
 [7] Verborgh, R., De Roo, J.: Drawing conclusions from linked data on the web: The EYE reasoner. IEEE Software 32(5), 23–27 (May 2015)
 [8] Andy Seaborne, M.J.: Spinrdf (2019), https://github.com/spinrdf/spinrdf
+[9] Calvanese, D., Carroll, J., De Giacomo, G., Hendler, J., Herman, I., Parsia, B., Patel-Schneider, P.F., Ruttenberg, A., Sattler, U., Schneider, M.: OWL2 web ontology language profiles (second edition): OWL2 RL. W3c recommendation, W3C (Dec 2012), https://www.w3.org/TR/2012/REC-owl2-profiles-20121211/
