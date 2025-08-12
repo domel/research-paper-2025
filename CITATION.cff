@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+title: >-
+  Online Appendix for "SPARQL in N3: SPARQL construct as a
+  rule language for the Semantic Web"
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Dörthe
+    family-names: Arndt
+    affiliation: 'Computational Logic Group, Technische Universität Dresden'
+    orcid: 'https://orcid.org/0000-0002-7401-8487'
+  - given-names: William
+    family-names: Van Woensel
+    orcid: 'https://orcid.org/0000-0002-7049-8735'
+    affiliation: 'Telfer School of Management, University of Ottawa'
+  - given-names: Dominik
+    family-names: Tomaszuk
+    affiliation: University of Bialystok
+    orcid: 'https://orcid.org/0000-0003-1806-067X'
+repository-code: 'https://github.com/domel/research-paper-2025'
+url: 'https://editor.notation3.org/spin32'
+abstract: >-
+  This repository contains the implementation and
+  experiments for the paper "SPARQL in N3: SPARQL CONSTRUCT
+  as a Rule Language for the Semantic Web". The work
+  introduces a translation from SPARQL CONSTRUCT queries
+  into Notation3 Logic (N3) rules, enabling recursive
+  rule-based reasoning directly over RDF data. By mapping
+  queries one-to-one to N3 rules, the approach preserves
+  understandability, adheres to Semantic Web principles, and
+  supports both forward and backward chaining via the EYE
+  reasoner. The repository includes detailed benchmarks such
+  as LMDB, YAGO, Deep Taxonomy, and Zika use cases, along
+  with scripts for reproducibility.
+keywords:
+  - SPARQL
+  - Notation3
+  - Rule-based reasoning
+license: MIT
