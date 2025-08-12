@@ -125,4 +125,4 @@ run % ./sin3.sh -s ../exp/zika/queries_red_snomed.sparql -d ../exp/zika/data_red
 
 # References
 
-[1] Reutter, J., Soto, A., Vrgoč, D.: Recursion in SPARQL. Semantic Web 12(5), 711–740 (2021).
+[1] Reutter, J., Soto, A., Vrgoč, D.: [Recursion in SPARQL](https://www.semantic-web-journal.net/system/files/swj2276.pdf). Semantic Web 12(5), 711–740 (2021).
