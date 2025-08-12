@@ -4,7 +4,7 @@ This online appendix accompanies our submission "SPARQL in N3: SPARQL construct 
 
 # Experiment results
 
-The [`exp/`](exp/) folder includes the detailed experiment results, together with a summary and discussion.
+The [`exp/`](exp/) folder includes the detailed experiment results, together with a summary and discussion. For reproducibility, all datasets and queries referenced below are either included in this repository or linked from publicly accessible sources.
 
 # Run experiments
 
@@ -15,7 +15,11 @@ To run SiN3, change your working directory to [`run/`](run/) and use the followi
 ```
 ./sin3.sh [-s <sparql>] [-d <data>] [-m <mode>(bwd|fwd)] ([-q <query>]) (-v) ([-r <result>])"
 ```
-(`-v` will print output ;  `-d` can be a comma-separated list of paths ; `-q ` is only needed in case of backward reasoning)
+- `-v` will print output.
+- `-d` can be a comma-separated list of paths.
+- `-q` is only needed in case of backward reasoning.
+- `<mode>` specifies the reasoning direction: fwd for forward chaining, bwd for backward chaining.
+- `<result>` (optional) stores the reasoning output to the specified file.
 
 For examples, see the experiments below.
 
