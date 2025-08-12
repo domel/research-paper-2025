@@ -2,6 +2,13 @@
 
 This online appendix accompanies our submission "SPARQL in N3: SPARQL construct as a rule language for the Semantic Web" to RuleML+RR 2025.
 
+# Online Demo
+
+There is an online demo available here:
+[https://editor.notation3.org/spin3/s/oG7qKAqN](https://editor.notation3.org/spin3/s/oG7qKAqN). 
+
+The demo is pre-loaded with Zika experiment queries and example data. You can click "execute" to run the query; the results will appear below, together with links for downloading the generated SPIN files and N3 rules.
+
 # Experiment results
 
 The [`exp/`](exp/) folder includes the detailed experiment results, together with a summary and discussion. For reproducibility, all datasets and queries referenced below are either included in this repository or linked from publicly accessible sources.
